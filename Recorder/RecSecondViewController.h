@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecSecondViewController : UIViewController
+@interface RecSecondViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

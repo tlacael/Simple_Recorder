@@ -20,12 +20,10 @@
 @property (strong, nonatomic) AudioData *audioData;
 @property (weak, nonatomic) IBOutlet UITextField *recordingStatusText;
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *recordingListCell;
-
-
 @end
 
 @implementation RecFirstViewController
+
 
 #pragma mark - Audio Callback
 
@@ -116,7 +114,7 @@ void myAudioCallback(Float32 * buffer, UInt32 numFrames, void * userData) {
 }
 - (IBAction)printFilesButtonPressed:(id)sender {
     NSArray *filenames = [self printFileNames];
-    self.recordingListCell.textLabel.text = [filenames lastObject];
+
     
 }
 
@@ -168,7 +166,9 @@ void myAudioCallback(Float32 * buffer, UInt32 numFrames, void * userData) {
     
     
     // Create audio file
-    self.recordingListCell = [[UITableViewCell alloc] init];
+    
+    NSLog(@"%@",@"Hello");
+
     
    
    
