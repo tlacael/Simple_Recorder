@@ -22,6 +22,10 @@
 		B9F0CEE8177FAF8400C824F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CEC7177FAF8300C824F0 /* UIKit.framework */; };
 		B9F0CEF0177FAF8400C824F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9F0CEEE177FAF8400C824F0 /* InfoPlist.strings */; };
 		B9F0CEF2177FAF8400C824F0 /* RecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F0CEF1177FAF8400C824F0 /* RecorderTests.m */; };
+		B9F0CF00177FAFD200C824F0 /* AudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F0CEFF177FAFD200C824F0 /* AudioData.m */; };
+		B9F0CF0C177FAFED00C824F0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CF0B177FAFED00C824F0 /* AudioToolbox.framework */; };
+		B9F0CF0E177FB24500C824F0 /* AudiOS.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = B9F0CF0D177FB24500C824F0 /* AudiOS.xcodeproj */; };
+		B9F0CF10177FB25C00C824F0 /* libAudiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CF0F177FB25C00C824F0 /* libAudiOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,11 @@
 		B9F0CEED177FAF8400C824F0 /* RecorderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RecorderTests-Info.plist"; sourceTree = "<group>"; };
 		B9F0CEEF177FAF8400C824F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B9F0CEF1177FAF8400C824F0 /* RecorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderTests.m; sourceTree = "<group>"; };
+		B9F0CEFE177FAFD200C824F0 /* AudioData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioData.h; sourceTree = "<group>"; };
+		B9F0CEFF177FAFD200C824F0 /* AudioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioData.m; sourceTree = "<group>"; };
+		B9F0CF0B177FAFED00C824F0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B9F0CF0D177FB24500C824F0 /* AudiOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = AudiOS.xcodeproj; path = ../AudiOS/AudiOS.xcodeproj; sourceTree = "<group>"; };
+		B9F0CF0F177FB25C00C824F0 /* libAudiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAudiOS.a; path = "../../Library/Developer/Xcode/DerivedData/Recorder-chpqmcjxtywaobbmpucfphiijsbc/Build/Products/Debug-iphoneos/libAudiOS.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F0CF10177FB25C00C824F0 /* libAudiOS.a in Frameworks */,
+				B9F0CF0C177FAFED00C824F0 /* AudioToolbox.framework in Frameworks */,
 				B9F0CEC6177FAF8300C824F0 /* CoreGraphics.framework in Frameworks */,
 				B9F0CEC8177FAF8300C824F0 /* UIKit.framework in Frameworks */,
 				B9F0CEC4177FAF8300C824F0 /* Foundation.framework in Frameworks */,
@@ -85,6 +96,7 @@
 		B9F0CEB7177FAF8300C824F0 = {
 			isa = PBXGroup;
 			children = (
+				B9F0CF0D177FB24500C824F0 /* AudiOS.xcodeproj */,
 				B9F0CEC9177FAF8300C824F0 /* Recorder */,
 				B9F0CEEB177FAF8400C824F0 /* RecorderTests */,
 				B9F0CEC2177FAF8300C824F0 /* Frameworks */,
@@ -104,6 +116,8 @@
 		B9F0CEC2177FAF8300C824F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9F0CF0F177FB25C00C824F0 /* libAudiOS.a */,
+				B9F0CF0B177FAFED00C824F0 /* AudioToolbox.framework */,
 				B9F0CEC3177FAF8300C824F0 /* Foundation.framework */,
 				B9F0CEC5177FAF8300C824F0 /* CoreGraphics.framework */,
 				B9F0CEC7177FAF8300C824F0 /* UIKit.framework */,
@@ -123,6 +137,8 @@
 				B9F0CEDB177FAF8300C824F0 /* RecSecondViewController.h */,
 				B9F0CEDC177FAF8300C824F0 /* RecSecondViewController.m */,
 				B9F0CEDE177FAF8300C824F0 /* Images.xcassets */,
+				B9F0CEFE177FAFD200C824F0 /* AudioData.h */,
+				B9F0CEFF177FAFD200C824F0 /* AudioData.m */,
 				B9F0CECA177FAF8300C824F0 /* Supporting Files */,
 			);
 			path = Recorder;
@@ -235,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F0CEDF177FAF8300C824F0 /* Images.xcassets in Resources */,
+				B9F0CF0E177FB24500C824F0 /* AudiOS.xcodeproj in Resources */,
 				B9F0CECE177FAF8300C824F0 /* InfoPlist.strings in Resources */,
 				B9F0CED7177FAF8300C824F0 /* Main.storyboard in Resources */,
 			);
@@ -258,6 +275,7 @@
 				B9F0CED0177FAF8300C824F0 /* main.m in Sources */,
 				B9F0CEDD177FAF8300C824F0 /* RecSecondViewController.m in Sources */,
 				B9F0CEDA177FAF8300C824F0 /* RecFirstViewController.m in Sources */,
+				B9F0CF00177FAFD200C824F0 /* AudioData.m in Sources */,
 				B9F0CED4177FAF8300C824F0 /* RecAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +402,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Recorder/Recorder-Prefix.pch";
 				INFOPLIST_FILE = "Recorder/Recorder-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Recorder-chpqmcjxtywaobbmpucfphiijsbc/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,6 +419,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Recorder/Recorder-Prefix.pch";
 				INFOPLIST_FILE = "Recorder/Recorder-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Recorder-chpqmcjxtywaobbmpucfphiijsbc/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
