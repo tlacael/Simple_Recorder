@@ -7,18 +7,16 @@
 //
 
 #import "RecFirstViewController.h"
-#import <AudiOS/AudioPlayer.h>
-#import "AudioData.h"
+#import "RecAppDelegate.h"
+#import "AudioHandling.h"
 
-
-
-
+#define kYOffset -1.f
 
 @interface RecFirstViewController ()
 
-@property (strong, nonatomic) AudioPlayer *audioPlayer;
-@property (strong, nonatomic) AudioData *audioData;
+
 @property (weak, nonatomic) IBOutlet UITextField *recordingStatusText;
+@property (weak, nonatomic) AudioHandling *aud;
 
 @end
 
@@ -41,82 +39,73 @@ void myAudioCallback(Float32 * buffer, UInt32 numFrames, void * userData) {
 //        
 //    // Initialise the audio file index for reading
 //    int af_idx = 0;
-    
+    // Write audio samples to audio file
+    if (audioData.startRecording) {
+        [audioData.afw writeSamplesWithBuffer: buffer andBufferSize: numFrames];
+    }
     // Main audio loop
     for (int i = 0; i < numFrames; i++) {
-               
+        // Write into the line buffer to visualize the mic input
+        audioData.line[4*i+1] = buffer[i] + kYOffset;
+        audioData.line[4*i+1+2] = buffer[i] + kYOffset;
+        
         // For each channel, let's add one sample from the audio file and another from the sinusoid
         buffer[audioData.numChannels*i] = 0;//.5 * audioFileBuf[af_idx++] + sample;      // left channel
         if (audioData.afr.numChannels == 2) {
             buffer[audioData.numChannels*i + 1] = 0;//.5 * audioFileBuf[af_idx++] + sample;  // right channel
         }
+
     }
 
-    // Write audio samples to audio file
-    if (audioData.startRecording) {
-        [audioData.afw writeSamplesWithBuffer: buffer andBufferSize: numFrames];
-    }
+
 }
 
 #pragma mark - Lazy Instantiation
 
-- (AudioPlayer*)audioPlayer {
-    if (!_audioPlayer) {
-        _audioPlayer = [[AudioPlayer alloc] initWithSampleRate:self.audioData.srate
-                                                     frameSize:self.audioData.bufferSize
-                                                andNumChannels:self.audioData.numChannels];
+
+- (AudioHandling  *)aud {
+    if (!_aud) {
+        _aud = [AudioHandling sharedAudio];
     }
-    return _audioPlayer;
+    return _aud;
 }
 
-- (AudioData*)audioData {
-    if (!_audioData) {
-        _audioData = [[AudioData alloc] init];
-        _audioData.srate = 44100;
-        _audioData.numChannels = 2;
-        _audioData.bufferSize = 1024;
-
-        _audioData.afr = [[AudioFileReader alloc] init];    // Let's do it here, not lazy instantiated
-        // (otherwise we may run into performance issues)
-        _audioData.afw = [[AudioFileWriter alloc] init];
-        _audioData.startRecording = NO;
-    }
-    return _audioData;
-}
-
+#pragma mark - Buttons
 - (IBAction)stopRecordingButtonPressed:(id)sender {
+    
 
-    if (self.audioData.startRecording) {
-        [self.audioPlayer stopAudio];
-        [self.audioData.afw closeFile];
-        self.audioData.startRecording = NO;
+    if (self.aud.audioData.startRecording) {
+        [self.aud.audioPlayer stopAudio];
+        [self.aud.audioData.afw closeFile];
+        self.aud.audioData.startRecording = NO;
+        
         [self.recordingStatusText setText:@""];
+
         
     }
 }
+
+
 - (IBAction)recordButtonPushed:(id)sender {
     static int n = 0;
     // Start audio
-    if (!self.audioData.startRecording) {
+    if (!self.aud.audioData.startRecording) {
         n++;
-        self.audioData.startRecording = YES;
+        
         NSString *filename = [NSString stringWithFormat:@"Recording-%d", n];
         filename = [filename stringByAppendingString:@".wav"];
         NSLog(@"%s",filename.UTF8String);
         
-        [self.audioData.afw loadFileWithName:filename sampleRate:self.audioData.srate andNumChannels:self.audioData.numChannels];
+        [self.aud.audioData.afw loadFileWithName:filename sampleRate:self.aud.audioData.srate andNumChannels:self.aud.audioData.numChannels];
         
-        [self.audioPlayer startWithCallback:myAudioCallback andUserData: (__bridge void *)(self.audioData)];
+        self.aud.audioData.startRecording = YES;
+        [self.aud.audioPlayer startWithCallback:myAudioCallback andUserData: (__bridge void *)(self.aud.audioData)];
 
         [self.recordingStatusText setText:@"RECORDING"];
     }
 
 }
-- (IBAction)printFilesButtonPressed:(id)sender {
-    NSArray *filenames = [self printFileNames];
 
-    
-}
 
 //NSArray *listItems = [list componentsSeparatedByString:@", "];
 
@@ -164,14 +153,17 @@ void myAudioCallback(Float32 * buffer, UInt32 numFrames, void * userData) {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    
-    // Create audio file
-    
-    NSLog(@"%@",@"Hello");
+}
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:YES];
+    [self.aud.audioPlayer stopAudio];
+    [self.aud.audioData.afw closeFile];
+    self.aud.audioData.startRecording = NO;
     
-   
-   
+    [self.recordingStatusText setText:@""];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -179,5 +171,7 @@ void myAudioCallback(Float32 * buffer, UInt32 numFrames, void * userData) {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

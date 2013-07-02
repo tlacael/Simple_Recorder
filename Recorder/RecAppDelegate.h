@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudiOS/AudioPlayer.h>
+#import "AudioData.h"
 
 @interface RecAppDelegate : UIResponder <UIApplicationDelegate>
 

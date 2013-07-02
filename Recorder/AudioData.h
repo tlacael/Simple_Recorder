@@ -19,5 +19,10 @@
 @property (strong, nonatomic) AudioFileWriter *afw;
 @property (assign, nonatomic) BOOL stopRecording;
 @property (assign, nonatomic) BOOL startRecording;
+@property (assign, nonatomic) BOOL isPlaying;
+@property (assign, nonatomic) BOOL isInitialized;
+@property (assign, nonatomic) GLfloat *line;
+@property (assign, nonatomic) GLfloat file1Vol;
+@property (assign, nonatomic) GLfloat file2Vol;
 
 @end

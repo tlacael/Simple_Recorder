@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9C143331781E8BA00952C9C /* libAudiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C143301781E8B300952C9C /* libAudiOS.a */; };
+		B9C1433D1782382B00952C9C /* AudioHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1433C1782382B00952C9C /* AudioHandling.m */; };
+		B9C1434217824DD400952C9C /* visualizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1434117824DD400952C9C /* visualizeViewController.m */; };
 		B9F0CEC4177FAF8300C824F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CEC3177FAF8300C824F0 /* Foundation.framework */; };
 		B9F0CEC6177FAF8300C824F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CEC5177FAF8300C824F0 /* CoreGraphics.framework */; };
 		B9F0CEC8177FAF8300C824F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CEC7177FAF8300C824F0 /* UIKit.framework */; };
@@ -24,11 +27,23 @@
 		B9F0CEF2177FAF8400C824F0 /* RecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F0CEF1177FAF8400C824F0 /* RecorderTests.m */; };
 		B9F0CF00177FAFD200C824F0 /* AudioData.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F0CEFF177FAFD200C824F0 /* AudioData.m */; };
 		B9F0CF0C177FAFED00C824F0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CF0B177FAFED00C824F0 /* AudioToolbox.framework */; };
-		B9F0CF0E177FB24500C824F0 /* AudiOS.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = B9F0CF0D177FB24500C824F0 /* AudiOS.xcodeproj */; };
-		B9F0CF10177FB25C00C824F0 /* libAudiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F0CF0F177FB25C00C824F0 /* libAudiOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B9C1432F1781E8B300952C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9C1432A1781E8B300952C9C /* AudiOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 547A71391778AE940023AE3C;
+			remoteInfo = AudiOS;
+		};
+		B9C143311781E8B300952C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9C1432A1781E8B300952C9C /* AudiOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 547A714A1778AE940023AE3C;
+			remoteInfo = AudiOSTests;
+		};
 		B9F0CEE9177FAF8400C824F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B9F0CEB8177FAF8300C824F0 /* Project object */;
@@ -39,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9C1432A1781E8B300952C9C /* AudiOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AudiOS.xcodeproj; path = ../AudiOS/AudiOS.xcodeproj; sourceTree = "<group>"; };
+		B9C1433B1782382B00952C9C /* AudioHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioHandling.h; sourceTree = "<group>"; };
+		B9C1433C1782382B00952C9C /* AudioHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioHandling.m; sourceTree = "<group>"; };
+		B9C1434017824DD400952C9C /* visualizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = visualizeViewController.h; sourceTree = "<group>"; };
+		B9C1434117824DD400952C9C /* visualizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = visualizeViewController.m; sourceTree = "<group>"; };
 		B9F0CEC0177FAF8300C824F0 /* Recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F0CEC3177FAF8300C824F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B9F0CEC5177FAF8300C824F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,7 +83,6 @@
 		B9F0CEFE177FAFD200C824F0 /* AudioData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioData.h; sourceTree = "<group>"; };
 		B9F0CEFF177FAFD200C824F0 /* AudioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioData.m; sourceTree = "<group>"; };
 		B9F0CF0B177FAFED00C824F0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		B9F0CF0D177FB24500C824F0 /* AudiOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = AudiOS.xcodeproj; path = ../AudiOS/AudiOS.xcodeproj; sourceTree = "<group>"; };
 		B9F0CF0F177FB25C00C824F0 /* libAudiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAudiOS.a; path = "../../Library/Developer/Xcode/DerivedData/Recorder-chpqmcjxtywaobbmpucfphiijsbc/Build/Products/Debug-iphoneos/libAudiOS.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9F0CF10177FB25C00C824F0 /* libAudiOS.a in Frameworks */,
+				B9C143331781E8BA00952C9C /* libAudiOS.a in Frameworks */,
 				B9F0CF0C177FAFED00C824F0 /* AudioToolbox.framework in Frameworks */,
 				B9F0CEC6177FAF8300C824F0 /* CoreGraphics.framework in Frameworks */,
 				B9F0CEC8177FAF8300C824F0 /* UIKit.framework in Frameworks */,
@@ -93,10 +112,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9C1432B1781E8B300952C9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9C143301781E8B300952C9C /* libAudiOS.a */,
+				B9C143321781E8B300952C9C /* AudiOSTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B9F0CEB7177FAF8300C824F0 = {
 			isa = PBXGroup;
 			children = (
-				B9F0CF0D177FB24500C824F0 /* AudiOS.xcodeproj */,
+				B9C1432A1781E8B300952C9C /* AudiOS.xcodeproj */,
 				B9F0CEC9177FAF8300C824F0 /* Recorder */,
 				B9F0CEEB177FAF8400C824F0 /* RecorderTests */,
 				B9F0CEC2177FAF8300C824F0 /* Frameworks */,
@@ -132,6 +160,10 @@
 				B9F0CED2177FAF8300C824F0 /* RecAppDelegate.h */,
 				B9F0CED3177FAF8300C824F0 /* RecAppDelegate.m */,
 				B9F0CED5177FAF8300C824F0 /* Main.storyboard */,
+				B9C1434017824DD400952C9C /* visualizeViewController.h */,
+				B9C1434117824DD400952C9C /* visualizeViewController.m */,
+				B9C1433B1782382B00952C9C /* AudioHandling.h */,
+				B9C1433C1782382B00952C9C /* AudioHandling.m */,
 				B9F0CED8177FAF8300C824F0 /* RecFirstViewController.h */,
 				B9F0CED9177FAF8300C824F0 /* RecFirstViewController.m */,
 				B9F0CEDB177FAF8300C824F0 /* RecSecondViewController.h */,
@@ -237,6 +269,12 @@
 			mainGroup = B9F0CEB7177FAF8300C824F0;
 			productRefGroup = B9F0CEC1177FAF8300C824F0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B9C1432B1781E8B300952C9C /* Products */;
+					ProjectRef = B9C1432A1781E8B300952C9C /* AudiOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B9F0CEBF177FAF8300C824F0 /* Recorder */,
@@ -245,13 +283,29 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B9C143301781E8B300952C9C /* libAudiOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAudiOS.a;
+			remoteRef = B9C1432F1781E8B300952C9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B9C143321781E8B300952C9C /* AudiOSTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AudiOSTests.octest;
+			remoteRef = B9C143311781E8B300952C9C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B9F0CEBE177FAF8300C824F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B9F0CEDF177FAF8300C824F0 /* Images.xcassets in Resources */,
-				B9F0CF0E177FB24500C824F0 /* AudiOS.xcodeproj in Resources */,
 				B9F0CECE177FAF8300C824F0 /* InfoPlist.strings in Resources */,
 				B9F0CED7177FAF8300C824F0 /* Main.storyboard in Resources */,
 			);
@@ -273,8 +327,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F0CED0177FAF8300C824F0 /* main.m in Sources */,
+				B9C1433D1782382B00952C9C /* AudioHandling.m in Sources */,
 				B9F0CEDD177FAF8300C824F0 /* RecSecondViewController.m in Sources */,
 				B9F0CEDA177FAF8300C824F0 /* RecFirstViewController.m in Sources */,
+				B9C1434217824DD400952C9C /* visualizeViewController.m in Sources */,
 				B9F0CF00177FAFD200C824F0 /* AudioData.m in Sources */,
 				B9F0CED4177FAF8300C824F0 /* RecAppDelegate.m in Sources */,
 			);
@@ -487,6 +543,7 @@
 				B9F0CEF7177FAF8400C824F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9F0CEF8177FAF8400C824F0 /* Build configuration list for PBXNativeTarget "RecorderTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +552,7 @@
 				B9F0CEFA177FAF8400C824F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
