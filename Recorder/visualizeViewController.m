@@ -9,8 +9,6 @@
 #import "visualizeViewController.h"
 #import "AudioHandling.h"
 
-
-#define kAccelerometerUpdates   600. // Hz
 #define kFrameSize              2048
 
 
@@ -110,7 +108,7 @@
     
     self.effect.transform.modelviewMatrix = modelViewMatrix;
     
-    _rotation += self.timeSinceLastUpdate * 0.5f;
+    //_rotation += self.timeSinceLastUpdate * 0.5f;
     
     // Set Background color
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);

@@ -50,9 +50,9 @@ void myAudioCallback(Float32 * buffer, UInt32 numFrames, void * userData) {
         audioData.line[4*i+1+2] = buffer[i] + kYOffset;
         
         // For each channel, let's add one sample from the audio file and another from the sinusoid
-        buffer[audioData.numChannels*i] = 0;//.5 * audioFileBuf[af_idx++] + sample;      // left channel
+       // buffer[audioData.numChannels*i] = 0;//.5 * audioFileBuf[af_idx++] + sample;      // left channel
         if (audioData.afr.numChannels == 2) {
-            buffer[audioData.numChannels*i + 1] = 0;//.5 * audioFileBuf[af_idx++] + sample;  // right channel
+         //   buffer[audioData.numChannels*i + 1] = 0;//.5 * audioFileBuf[af_idx++] + sample;  // right channel
         }
 
     }
